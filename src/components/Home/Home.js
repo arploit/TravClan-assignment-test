@@ -1,20 +1,25 @@
 import React from 'react'
-import { useContext } from 'react'
+import { useContext ,useState} from 'react'
 import { CustomerListContext } from '../Context/Context'
-import Customer from '../Customer/Customer'
+import Customer from '../Customer/CustomerCard'
 
 function Home() {
     let value = useContext(CustomerListContext)
-        let customerList = value.customerList
-        
+    const [toggle, setToggle] = useState(true);
+    let customerList = value.customerList
+  
+    const updateToggle = () => {
+        setToggle(!toggle)
+       
+    }
   return (
-		
-      <>
-          {customerList.map((customer) =>{
-              return(
-                  <Customer props={customer} key={customer.id}/>
-              )
-          })}
+		<>
+			<button onClick={() => updateToggle()}>
+				{toggle ? 'Minimum' : 'Maximum'}
+			</button>
+			{customerList.map((customer) => {
+				return <Customer props={customer} key={customer.id} toggle={toggle} />;
+			})}
 		</>
 	);
 }

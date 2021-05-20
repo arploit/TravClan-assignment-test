@@ -1,12 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-const Customer =({props}) =>{
+const Customer = ({ props, toggle }) => {
 
-    const bidAmountArr = (arr, high = true) => {
+      
+
+    const bidAmountArr = (arr, high) => {
         var newArr = [];
         var amount = 0;
+       
 
-        if (arr) {
+        if (arr && arr.length > 0) {
             arr.map((arrobj) => {
                 return newArr.push(arrobj['amount']);
             });
@@ -17,19 +20,24 @@ const Customer =({props}) =>{
                 if (typeof  newArr[0] === 'undefined') 	return amount;
                 else return newArr[0];
             } else {
-                if (typeof  newArr[newArr.length - 1] === 'undefined') return amount;
-			     else return newArr[newArr.length - 1];
+                
+                if (typeof newArr[newArr.length - 1] === 'undefined') return amount;
+                else 
+                    return newArr[newArr.length - 1];
+                
 			    }
 
 			
         };
-        return amount
+        return (newArr.length > 0) ? amount : '';
     }
+
     
-    let Amount = bidAmountArr(props.bids, false)
+    let Amount = bidAmountArr(props.bids, toggle)
+       
 
    return (
-			<div className="card">
+       <div className="card">
 				<img
 					src={props.avatarUrl}
 					alt={props.firstname}
@@ -39,7 +47,7 @@ const Customer =({props}) =>{
 					{props.firstname} {props.lastname}
 				</h3>
 				<h3 className="avatar-email">{props.email}</h3>
-				<h3 className="avatar-amount">{Amount}</h3>
+				{Amount = '' ? '': <h3 className="avatar-amount">{Amount}</h3>}
 			</div>
 		);
 }
