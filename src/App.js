@@ -1,11 +1,15 @@
 
-
+import { CustomerContext} from './components/Context/Context'
+import Home from './components/Home/Home'
 
 function App() {
+
+  
   return (
-    
-    <h1>Hello</h1>
-  );
+		<CustomerContext>
+			<Home/>
+		</CustomerContext>
+	);
 }
 
 export default App;
