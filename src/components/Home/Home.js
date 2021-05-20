@@ -1,21 +1,18 @@
 import React from 'react'
 import { useContext } from 'react'
-import {
-  CustomerListContext
- 
-} from '../Context/Context'
-
+import { CustomerListContext } from '../Context/Context'
+import Customer from '../Customer/Customer'
 
 function Home() {
     let value = useContext(CustomerListContext)
         let customerList = value.customerList
-    
+        
   return (
 		
       <>
           {customerList.map((customer) =>{
               return(
-          <h1 key={customer.id}>{customer.id}</h1>
+                  <Customer props={customer} key={customer.id}/>
               )
           })}
 		</>
