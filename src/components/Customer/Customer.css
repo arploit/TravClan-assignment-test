@@ -1,0 +1,12 @@
+.custWindow{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.custCard{
+    width: 15rem;
+    height: 20rem;
+    background:#9689a3;
+}

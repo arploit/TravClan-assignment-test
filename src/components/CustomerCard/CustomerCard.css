@@ -4,6 +4,9 @@
     justify-content: space-around;
     align-items: center;
     width: 40rem;
-    
+    cursor: pointer;
+     border-radius: 25px;
+     text-transform: capitalize;
+  
 }
 
