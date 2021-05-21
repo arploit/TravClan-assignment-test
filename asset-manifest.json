@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/arploit/TravClan-assignment-test/static/css/main.ed8cae14.chunk.css",
+    "main.js": "/arploit/TravClan-assignment-test/static/js/main.b4c310ba.chunk.js",
+    "main.js.map": "/arploit/TravClan-assignment-test/static/js/main.b4c310ba.chunk.js.map",
+    "runtime-main.js": "/arploit/TravClan-assignment-test/static/js/runtime-main.42a6bea2.js",
+    "runtime-main.js.map": "/arploit/TravClan-assignment-test/static/js/runtime-main.42a6bea2.js.map",
+    "static/js/2.38ae85e1.chunk.js": "/arploit/TravClan-assignment-test/static/js/2.38ae85e1.chunk.js",
+    "static/js/2.38ae85e1.chunk.js.map": "/arploit/TravClan-assignment-test/static/js/2.38ae85e1.chunk.js.map",
+    "index.html": "/arploit/TravClan-assignment-test/index.html",
+    "static/css/main.ed8cae14.chunk.css.map": "/arploit/TravClan-assignment-test/static/css/main.ed8cae14.chunk.css.map",
+    "static/js/2.38ae85e1.chunk.js.LICENSE.txt": "/arploit/TravClan-assignment-test/static/js/2.38ae85e1.chunk.js.LICENSE.txt",
+    "static/media/down-arrow.ae83fa63.svg": "/arploit/TravClan-assignment-test/static/media/down-arrow.ae83fa63.svg",
+    "static/media/up-arrow.f2915874.svg": "/arploit/TravClan-assignment-test/static/media/up-arrow.f2915874.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.42a6bea2.js",
+    "static/js/2.38ae85e1.chunk.js",
+    "static/css/main.ed8cae14.chunk.css",
+    "static/js/main.b4c310ba.chunk.js"
+  ]
+}
