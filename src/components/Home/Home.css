@@ -1,0 +1,14 @@
+.cardPage{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    background:#3fc ;
+   
+}
+
+
+.cardDetail{
+    margin-top: 1rem;
+}

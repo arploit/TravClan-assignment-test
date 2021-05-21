@@ -1,4 +1,7 @@
 import React from 'react';
+import './CustomerCard.css';
+import Avatar from '@material-ui/core/Avatar';
+import Box from '@material-ui/core/Box';
 
 const Customer = ({ props, toggle }) => {
 
@@ -29,16 +32,23 @@ const Customer = ({ props, toggle }) => {
 
 			
         };
-        return (newArr.length > 0) ? amount : '';
+        return (newArr.length > 0) ? amount : 0 ;
     }
 
     
     let Amount = bidAmountArr(props.bids, toggle)
+
+  
        
 
    return (
-       <div className="card">
-				<img
+			<Box
+				className="card"
+				component="span"
+				p={1}
+				m={1}
+				bgcolor="background.paper">
+				<Avatar
 					src={props.avatarUrl}
 					alt={props.firstname}
 					className="avatar-image"
@@ -47,8 +57,8 @@ const Customer = ({ props, toggle }) => {
 					{props.firstname} {props.lastname}
 				</h3>
 				<h3 className="avatar-email">{props.email}</h3>
-				{Amount = '' ? '': <h3 className="avatar-amount">{Amount}</h3>}
-			</div>
+				<h3 className="avatar-amount"> {Amount}</h3>
+			</Box>
 		);
 }
 
