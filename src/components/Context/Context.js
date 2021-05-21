@@ -11,8 +11,25 @@ export function CustomerContext(props) {
             if (array[i].firstname) newArr.push(array[i])
         }
         
-        setCustomerList(newArr)
-        
+        let newCustomerList = newArr.map((customer) => {
+             let largeAmount = 0;
+			let smallAmount = 0;
+					let amountArray = customer.bids.map((bid, i) => {
+						let newAmount = [];
+						newAmount = bid['amount'];
+						return newAmount;
+					});
+            amountArray = amountArray.sort();
+            if (typeof amountArray !== 'undefined') {
+                if (typeof amountArray[amountArray.length - 1] !== 'undefined')
+                    largeAmount = amountArray[amountArray.length - 1];
+                if(typeof amountArray[0] !== 'undefined')
+                smallAmount = amountArray[0];
+            }
+                return { ...customer, largeAmount, smallAmount};
+        });
+        setCustomerList(newCustomerList);
+        return true; 
     }
     
     useEffect(() => {
@@ -21,10 +38,30 @@ export function CustomerContext(props) {
         .then(data => filterArr(data))
         
     }, [])
+
+
+    const sortCustomerList = (toggle, order) => {
+        if (order === 'Ascending') {
+            if (toggle) {
+                setCustomerList(customerList.sort((a, b) => a.largeAmount - b.largeAmount));
+                return;
+            }
+            setCustomerList(customerList.sort((a, b) => a.smallAmount - b.smallAmount));
+            return;
+        } else {
+            if (toggle) {
+                setCustomerList(customerList.sort((a, b) => b.largeAmount - a.largeAmount));
+                return;
+            }
+            setCustomerList(customerList.sort((a, b) => b.smallAmount - a.smallAmount));
+            return;
+        }
+           };
     
     let value = {
-        customerList 
-    }
+			customerList,
+			sortCustomerList,
+		};
 
     return (
         <CustomerListContext.Provider value ={value}>

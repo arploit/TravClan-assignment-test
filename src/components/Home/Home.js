@@ -4,26 +4,33 @@ import { CustomerListContext } from '../Context/Context'
 import Customer from '../CustomerCard/CustomerCard'
 import './Home.css'
 
-function Home() {
-    let value = useContext(CustomerListContext)
+const Home = React.memo(() => {
+	let value = useContext(CustomerListContext)
+	const sortCustomerList = value.sortCustomerList;
 	const [toggle, setToggle] = useState(true);
-	const [sort] = useState('asc');
-    let customerList = value.customerList
+	const [sortOrder, setSortOrder] = useState('Ascending');
+	let customerList = value.customerList
   
-    const updateToggle = () => {
-        setToggle(!toggle)
+	const updateToggle = () => {
+		setToggle(!toggle)
        
 	}
-	
-	const SortArr = () => {
-		
+
+	const setSortOrderFn = () => {
+		if (sortOrder === 'Ascending') setSortOrder('Decending');
+		else setSortOrder('Ascending');
+		sortCustomerList(toggle, sortOrder);
 	}
+	
+	
 	return (
 		<div className="cardPage">
 			<button onClick={() => updateToggle()}>
 				{toggle ? 'Minimum' : 'Maximum'}
 			</button>
-			<button onClick={() => SortArr()}>{sort ? 'asc' : 'Desc'}</button>
+			<button onClick={() => setSortOrderFn()}>
+				{sortOrder === 'Ascending' ? 'Ascending' : 'Decending'}
+			</button>
 			<div className="cardDetail">
 				{customerList.map((customer) => {
 					return (
@@ -33,6 +40,6 @@ function Home() {
 			</div>
 		</div>
 	);
-}
+});
 
 export default Home;
