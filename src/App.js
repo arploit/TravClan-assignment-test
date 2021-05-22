@@ -12,8 +12,12 @@ function App() {
 		<CustomerContext>
 			<Router>
 				<div className="main">
-					<Route exact path="/" component={Home} />
-					<Route exact path="/customer/:key" component={Customer} />
+					<Route exact path="TravClan-assignment-test/" component={Home} />
+					<Route
+						exact
+						path="TravClan-assignment-test/customer/:key"
+						component={Customer}
+					/>
 				</div>
 			</Router>
 		</CustomerContext>
