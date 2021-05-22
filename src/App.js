@@ -12,10 +12,10 @@ function App() {
 		<CustomerContext>
 			<Router>
 				<div className="main">
-					<Route exact path="TravClan-assignment-test/" component={Home} />
+					<Route exact path="/" component={Home} />
 					<Route
 						exact
-						path="TravClan-assignment-test/customer/:key"
+						path="/customer/:key"
 						component={Customer}
 					/>
 				</div>
