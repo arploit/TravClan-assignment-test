@@ -18,7 +18,9 @@ function Customer() {
     return (
 			<div className="custWindow">
 				{customer.map((cust) => {
+					
 					return (
+
 						<div className="custCard">
 							<CardMedia
 								component="img"
@@ -34,6 +36,7 @@ function Customer() {
 								<Typography variant="body2" color="textSecondary" component="p">
 									<strong>Email</strong>: {cust.email}
 									<br />
+									
 									<strong>Maximum Bid</strong> : &#8377; {cust.largeAmount}
 									<br />
 									<strong>Lowest Bid</strong> : &#8377; {cust.smallAmount}

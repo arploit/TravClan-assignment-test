@@ -12,10 +12,14 @@ function App() {
 		<CustomerContext>
 			<Router>
 				<div className="main">
-					<Route exact path="/" component={Home} />
 					<Route
 						exact
-						path="/customer/:key"
+						path="/arploit/TravClan-assignment-test/"
+						component={Home}
+					/>
+					<Route
+						exact
+						path="/arploit/TravClan-assignment-test/customer/:key"
 						component={Customer}
 					/>
 				</div>

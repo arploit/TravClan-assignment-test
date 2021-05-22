@@ -49,7 +49,9 @@ const Home = React.memo(() => {
 			<div className="cardDetail">
 				{customerList.map((customer) => {
 					return (
-						<Link to={`/customer/${customer.id}`} className="link">
+						<Link
+							to={`/arploit/TravClan-assignment-test/customer/${customer.id}`}
+							className="link">
 							<Customer props={customer} key={customer.id} toggle={toggle} />
 						</Link>
 					);
